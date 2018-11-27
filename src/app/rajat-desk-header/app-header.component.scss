@@ -1,0 +1,14 @@
+span {
+  margin: 8px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+  font-size: 20px;
+  font-style: normal;
+}
+mat-toolbar {
+ background-color: grayscale($color: #ffffbb);
+}
+.header-links {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}

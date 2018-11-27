@@ -1,0 +1,37 @@
+<section class="container">
+    <div class="row">
+      
+        <mat-card class="app-card">
+            <mat-card-header>
+              <mat-card-title>Rajat Patel</mat-card-title>
+              <mat-card-subtitle>An IT professional</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="../assets/image/Rajat_Patel_im.jpg" alt="Photo of Rajat Patel">
+            <mat-card-content>
+              <p>
+                An IT professional having around 11 years of IT experience.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>CONTACT</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+  </section>
+
+  <mat-list>
+    <h3 mat-subheader>Folders</h3>
+    <mat-list-item *ngFor="let folder of folders; last as last">
+       <mat-icon mat-list-icon>folder</mat-icon>
+       <h4 mat-line>jhjghjgh</h4>
+       <p mat-line class="demo-2"> gjghjghjgh </p>
+       <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <h3 mat-subheader>Notes</h3>
+    <mat-list-item *ngFor="let note of notes">
+       <mat-icon mat-list-icon>note</mat-icon>
+       <h4 mat-line>gjhgjghjh</h4>
+       <p mat-line class="demo-2">gjhjghj </p>
+    </mat-list-item>
+ </mat-list>

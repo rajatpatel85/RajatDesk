@@ -1,0 +1,12 @@
+.homeParent {
+    float: left;
+    position: relative;
+  }
+
+  .app-home-card {
+    max-width: 300px;
+    width: 300px;
+    height: 350px;
+    margin: 30px;
+    background-color: grayscale($color: #ffffbb); 
+  }

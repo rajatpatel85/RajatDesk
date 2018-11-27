@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-const routes: Routes = [];
+import { RouterModule, Routes } from '@angular/router';
+import {RajatAuthorComponent} from './rajat-author/rajat-author.component';
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  routes: Routes = [
+  { path: 'author', component: RajatAuthorComponent }
+];
+
+}
