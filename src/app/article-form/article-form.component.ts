@@ -10,13 +10,13 @@ import { RestService } from '../rest.service';
 export class ArticleFormComponent implements OnInit {
 
   language = ['JAVA','Spring','Springboot','Angular','React'];
-  article = new Article(1000, this.language[0], 'Set up environment','Set up environment');
+  article = new Article(this.language[0],"","","");
   submitted = false;
 
   onSubmit() { 
     this.submitted = true; 
-    let newArticle = new Article(1002, this.article.title, this.article.description, this.article.description);
-    this.rest.addArticle(newArticle);
+    // let newArticle = new Article(this.article.title, this.article.description, this.article.description);
+    // this.rest.addArticle(newArticle);
   }
 
   // TODO: Remove this when we're done
@@ -29,7 +29,7 @@ export class ArticleFormComponent implements OnInit {
   }
 
   newArticle() {
-    this.article = new Article(1000, this.language[0], 'Set up environment','Set up environment');
+    // this.article = new Article(1000, this.language[0], 'Set up environment','Set up environment');
   }
 
 }
