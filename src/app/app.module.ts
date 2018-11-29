@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -18,8 +19,10 @@ import { AppAdsHeaderComponent } from './app-ads-header/app-ads-header.component
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { JavaComponent } from './java/java.component';
 import { SpringComponent } from './spring/spring.component';
+import { ArticleFormComponent } from './article-form/article-form.component';
 
 const appRoutes: Routes = [
+  { path: 'article', component: ArticleFormComponent },
   { path: 'java', component: JavaComponent },
   { path: 'spring',component: SpringComponent },
   { path: 'home',component: AppHomeBodyComponent },
@@ -39,7 +42,8 @@ const appRoutes: Routes = [
     AppAdsHeaderComponent,
     PageNotFoundComponent,
     JavaComponent,
-    SpringComponent
+    SpringComponent,
+    ArticleFormComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -54,6 +58,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatListModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

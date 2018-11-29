@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
+import { Article } from '../app/article';
 
 @Injectable({
   providedIn: 'root'
@@ -27,18 +28,18 @@ export class RestService {
       map(this.extractData));
   }
 
+  addArticle(Article): Observable<any> {
+    console.log(Article);
+    return this.http.post<any>(this.endpoint + 'products', JSON.stringify(Article),this.httpOptions).pipe(
+      tap((Article) => console.log(`added product w/ id=${Article.id}`)),
+      catchError(this.handleError<any>('addArticle'))
+    );
+  }
+
   // getProduct(id): Observable<any> {
   //   return this.http.get(endpoint + 'products/' + id).pipe(
   //     map(this.extractData));
-  // }
-
-  // addProduct(product): Observable<any> {
-  //   console.log(product);
-  //   return this.http.post<any>(endpoint + 'products', JSON.stringify(product), httpOptions).pipe(
-  //     tap((product) => console.log(`added product w/ id=${product.id}`)),
-  //     catchError(this.handleError<any>('addProduct'))
-  //   );
-  // }
+  // } 
 
   // updateProduct(id, product): Observable<any> {
   //   return this.http.put(endpoint + 'products/' + id, JSON.stringify(product), httpOptions).pipe(
