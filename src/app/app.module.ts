@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -20,11 +21,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { JavaComponent } from './java/java.component';
 import { SpringComponent } from './spring/spring.component';
 import { ArticleFormComponent } from './article-form/article-form.component';
+import { ReactComponent } from './react/react.component';
 
 const appRoutes: Routes = [
   { path: 'article', component: ArticleFormComponent },
   { path: 'java', component: JavaComponent },
   { path: 'spring',component: SpringComponent },
+  { path: 'react',component: ReactComponent },
   { path: 'home',component: AppHomeBodyComponent },
   { path: '',
     redirectTo: '/home',
@@ -43,7 +46,8 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     JavaComponent,
     SpringComponent,
-    ArticleFormComponent
+    ArticleFormComponent,
+    ReactComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -59,6 +63,7 @@ const appRoutes: Routes = [
     MatListModule,
     HttpClientModule,
     FormsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

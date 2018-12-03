@@ -28,12 +28,11 @@ export class RestService {
       map(this.extractData));
   }
 
-  addArticle(Article): Observable<any> {
-    console.log(Article);
-    return this.http.post<any>(this.endpoint + 'products', JSON.stringify(Article),this.httpOptions).pipe(
-      tap((Article) => console.log(`added product w/ id=${Article.id}`)),
-      catchError(this.handleError<any>('addArticle'))
-    );
+  addArticle (hero: Article): Observable<Article> {
+    return this.http.post<Article>(this.endpoint + "addArticle/", hero, this.httpOptions)
+      .pipe(
+        catchError(this.handleError('addHero', hero))
+      );
   }
 
   // getProduct(id): Observable<any> {

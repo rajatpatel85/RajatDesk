@@ -15,8 +15,8 @@ export class ArticleFormComponent implements OnInit {
 
   onSubmit() { 
     this.submitted = true; 
-    // let newArticle = new Article(this.article.title, this.article.description, this.article.description);
-    // this.rest.addArticle(newArticle);
+    let newArticle = new Article(this.article.language, this.article.header, this.article.title, this.article.description);
+    this.rest.addArticle(newArticle).subscribe(article1 => this.article);
   }
 
   // TODO: Remove this when we're done
@@ -29,7 +29,7 @@ export class ArticleFormComponent implements OnInit {
   }
 
   newArticle() {
-    // this.article = new Article(1000, this.language[0], 'Set up environment','Set up environment');
+    //this.article = new Article(1000, this.language[0], 'Set up environment','Set up environment');
   }
 
 }
